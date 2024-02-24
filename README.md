@@ -16,4 +16,4 @@
 - sort(Comparator<? super E> c)
   Первая половина реализует метод sort при помощи алгоритма quicksort вторая merge sort.
 
-3) 
+3) В процессе
