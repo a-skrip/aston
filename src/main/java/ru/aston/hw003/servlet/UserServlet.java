@@ -22,7 +22,6 @@ public class UserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userJsonString = new Gson().toJson(userService.getAllUsers());
-//        response.getWriter().println(userService.getAllUsers());
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
