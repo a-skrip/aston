@@ -17,9 +17,9 @@ hw002 Написать свой кастомный ArrayList
 - [x] sort(Comparator<? super E> c) sort - quicksort
 
 hw003
-- [] сделать простенький сервис
-- [] использовать сервлеты
-- [] использовать jdbc
-- [] нельзя использовать spring, hibernate
-- [] должна быть реализована связь many to many, one to many
-- [] бд Postgres
+- [x] сделать простенький сервис
+- [x] использовать сервлеты
+- [x] использовать jdbc
+- [x] нельзя использовать spring, hibernate
+- [x] должна быть реализована связь many to many, one to many
+- [x] бд Postgres
