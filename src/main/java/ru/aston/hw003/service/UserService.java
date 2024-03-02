@@ -3,6 +3,7 @@ package ru.aston.hw003.service;
 import ru.aston.hw003.User;
 import ru.aston.hw003.dao.UserDAO;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserService {
@@ -24,7 +25,7 @@ public class UserService {
         return userDAO.addUser(user.getName(), user.getPostCode(), user.getProfession());
     }
 
-    public void deleteUserById(long id) {
+    public void deleteUserById(long id)  {
 
         userDAO.deleteUser(id);
     }
@@ -32,6 +33,9 @@ public class UserService {
     public void updateUser(long id, User userFrom) {
 
         userDAO.updateUser(id, userFrom);
+    }
+    public void deleteAll() {
+        userDAO.deleteAll();
     }
 
 

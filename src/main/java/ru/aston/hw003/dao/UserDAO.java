@@ -30,20 +30,26 @@ public class UserDAO {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 userList.add(getUserFromResultSet(resultSet));
+
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+
         }
         return userList;
     }
 
     public void deleteUser(long id) {
 
+
         try (PreparedStatement preparedStatement = getConnection().prepareStatement("DELETE FROM public.user WHERE id=?;")) {
+
             preparedStatement.setLong(1, id);
             preparedStatement.execute();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
+
         }
     }
 
@@ -52,12 +58,15 @@ public class UserDAO {
         try (PreparedStatement preparedStatement = getConnection().prepareStatement(
                 "INSERT INTO public.user (name, post_code, profession) values (?, ?, ?) returning *;")) {
 
+
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, postCode);
             preparedStatement.setString(3, profession);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 User user = getUserFromResultSet(resultSet);
+
+
                 return user;
             }
 
@@ -68,7 +77,7 @@ public class UserDAO {
     }
 
 
-        public User getUserById(long id) {
+    public User getUserById(long id) {
 
         try (PreparedStatement preparedStatement = getConnection().prepareStatement(
                 "SELECT id, name, post_code, profession FROM public.user WHERE id=?;")) {
@@ -89,6 +98,7 @@ public class UserDAO {
             throw new RuntimeException(e);
         }
     }
+
     public User updateUser(long id, User userFromRequest) {
 
         String nameUpdate = userFromRequest.getName();
@@ -111,6 +121,16 @@ public class UserDAO {
             throw new RuntimeException(e);
         }
         return null;
+    }
+
+    public void deleteAll() {
+
+        try (PreparedStatement preparedStatement = getConnection().prepareStatement("DELETE FROM public.user;")) {
+
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private User getUserFromResultSet(ResultSet resultSet) throws SQLException {
