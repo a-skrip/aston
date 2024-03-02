@@ -1,7 +1,6 @@
 package ru.aston.hw003.dao;
 
-import ru.aston.hw003.Doctor;
-import ru.aston.hw003.Patient;
+import ru.aston.hw003.entity.Patient;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
 package ru.aston.hw003.dto;
 
-import ru.aston.hw003.Doctor;
-import ru.aston.hw003.Patient;
+import ru.aston.hw003.entity.Doctor;
+import ru.aston.hw003.entity.Patient;
 
 import java.util.List;
 

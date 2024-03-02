@@ -1,4 +1,4 @@
-package ru.aston.hw003;
+package ru.aston.hw003.entity;
 
 
 import lombok.AllArgsConstructor;
@@ -13,9 +13,6 @@ public class User {
     private String postCode;
     private String profession;
 
-    @Override
-    public String toString() {
-        return "id =" + id + ", name='" + name + '\'' + ", postCode=" + postCode + ", profession='" + profession + '\'' +
-                '}';
+
     }
-}
+

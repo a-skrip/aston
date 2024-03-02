@@ -1,15 +1,30 @@
-package ru.aston.hw003;
+package ru.aston.hw003.entity;
 
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "patient", schema = "public")
 public class Patient {
 
+    @Id
     private Long id;
+    @Column
     private Long doctorId;
+    @Column
     private String name;
 
     public Patient(Long id, Long doctorId, String name) {
         this.id = id;
         this.doctorId = doctorId;
         this.name = name;
+    }
+
+    public Patient() {
+
     }
 
     public Long getId() {
