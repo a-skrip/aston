@@ -5,12 +5,16 @@ import lombok.Data;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "doctor", schema = "public")
 @Data
 
 public class Doctor {
+//    @OneToMany(mappedBy = "doctor")
+//    private List<Patient> patient;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -21,7 +25,8 @@ public class Doctor {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-
+    public Doctor() {
+    }
     public Doctor(String name, String specialization, String phoneNumber) {
         this.id = id;
         this.name = name;
@@ -29,9 +34,6 @@ public class Doctor {
         this.phoneNumber = phoneNumber;
     }
 
-    public Doctor() {
-
-    }
 
 
 

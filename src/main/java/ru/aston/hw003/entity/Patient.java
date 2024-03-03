@@ -4,11 +4,17 @@ package ru.aston.hw003.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "patient", schema = "public")
-
 public class Patient {
+//    @ManyToOne()
+//    @JoinColumn(name = "doctor_id")
+//    private Doctor doctor;
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -25,12 +25,12 @@ public class DoctorServlet extends HttpServlet {
         String id = request.getParameter("id");
         Doctor doctor = doctorService.getDoctorById(Long.parseLong(id));
 
-        String userJsonString = new Gson().toJson(doctor);
+        String doctorJsonString = new Gson().toJson(doctor);
 
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        out.print(userJsonString);
+        out.print(doctorJsonString);
         out.flush();
     }
 
