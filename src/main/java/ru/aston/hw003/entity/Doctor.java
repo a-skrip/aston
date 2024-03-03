@@ -1,13 +1,18 @@
 package ru.aston.hw003.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Data;
+
+
+
+import javax.persistence.*;
+
 @Entity
 @Table(name = "doctor", schema = "public")
+@Data
+
 public class Doctor {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column
     private String name;
@@ -17,7 +22,7 @@ public class Doctor {
     private String phoneNumber;
 
 
-    public Doctor(long id, String name, String specialization, String phoneNumber) {
+    public Doctor(String name, String specialization, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.specialization = specialization;
@@ -27,6 +32,8 @@ public class Doctor {
     public Doctor() {
 
     }
+
+
 
     public long getId() {
         return id;
@@ -58,5 +65,15 @@ public class Doctor {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", specialization='" + specialization + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
     }
 }

@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS public.user
+CREATE TABLE IF NOT EXISTS public.student
 (
     id         SERIAL PRIMARY KEY,
     name       VARCHAR(40) NOT NULL,
