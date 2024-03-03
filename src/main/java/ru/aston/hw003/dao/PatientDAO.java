@@ -29,18 +29,7 @@ public class PatientDAO {
         }
     }
 
-    public List<Patient> getListPatient() {
 
-        try (Session session = sessionFactory.getCurrentSession()) {
-
-            Transaction transaction = session.beginTransaction();
-            NativeQuery<Patient> nativeQuery = session.createNativeQuery(
-                    "SELECT * FROM public.patient;", Patient.class);
-            List<Patient> resultList = nativeQuery.getResultList();
-            transaction.commit();
-            return resultList;
-        }
-    }
 
 
 
