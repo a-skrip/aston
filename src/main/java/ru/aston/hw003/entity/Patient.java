@@ -9,23 +9,23 @@ import java.util.List;
 @Entity
 @Table(name = "patient", schema = "public")
 public class Patient {
-//    @ManyToOne()
-//    @JoinColumn(name = "doctor_id")
-//    private Doctor doctor;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
 
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "doctor_id")
-    private Long doctorId;
+//    @Column(name = "doctor_id")
+//    private Long doctorId;
     @Column
     private String name;
 
     public Patient(Long id, Long doctorId, String name) {
         this.id = id;
-        this.doctorId = doctorId;
+//        this.doctorId = doctorId;
         this.name = name;
     }
 
@@ -41,13 +41,13 @@ public class Patient {
         this.id = id;
     }
 
-    public Long getDoctorId() {
-        return doctorId;
-    }
+//    public Long getDoctorId() {
+//        return doctorId;
+//    }
 
-    public void setDoctorId(Long doctorId) {
-        this.doctorId = doctorId;
-    }
+//    public void setDoctorId(Long doctorId) {
+//        this.doctorId = doctorId;
+//    }
 
     public String getName() {
         return name;
@@ -55,15 +55,6 @@ public class Patient {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Patient{" +
-                "id=" + id +
-                ", doctorId=" + doctorId +
-                ", name='" + name + '\'' +
-                '}';
     }
 }
 

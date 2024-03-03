@@ -12,8 +12,9 @@ import java.util.List;
 @Data
 
 public class Doctor {
-//    @OneToMany(mappedBy = "doctor")
-//    private List<Patient> patient;
+
+    @OneToMany(mappedBy = "doctor", fetch = FetchType.EAGER)
+    private List<Patient> patient;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

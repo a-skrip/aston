@@ -38,7 +38,6 @@ public class DoctorDAO {
             Transaction transaction = session.beginTransaction();
 
             Doctor doctor = session.get(Doctor.class, id);
-//            long getId = doctor.getId();
             transaction.commit();
 
             return doctor;
