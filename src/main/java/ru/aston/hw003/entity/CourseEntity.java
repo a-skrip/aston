@@ -21,7 +21,7 @@ public class CourseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
-    @Column(name = "course_name")
+    @Column
     String courseName;
 
     @Column
