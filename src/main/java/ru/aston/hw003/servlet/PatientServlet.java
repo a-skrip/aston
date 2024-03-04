@@ -2,6 +2,9 @@ package ru.aston.hw003.servlet;
 
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import ru.aston.hw003.dto.DoctorWithPatientDTO;
+import ru.aston.hw003.dto.PatientDTO;
 import ru.aston.hw003.entity.Patient;
 import ru.aston.hw003.service.PatientService;
 
@@ -23,9 +26,10 @@ public class PatientServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String id = request.getParameter("id");
-        Patient patient = patientService.getPatientById(Long.parseLong(id));
+        PatientDTO patientById = patientService.getPatientById(Long.parseLong(id));
 
-        String patientJsonString = new Gson().toJson(patient);
+        String patientJsonString = new Gson().toJson(patientById);
+
 
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");

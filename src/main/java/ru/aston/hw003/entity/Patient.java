@@ -13,8 +13,6 @@ public class Patient {
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -41,13 +39,6 @@ public class Patient {
         this.id = id;
     }
 
-//    public Long getDoctorId() {
-//        return doctorId;
-//    }
-
-//    public void setDoctorId(Long doctorId) {
-//        this.doctorId = doctorId;
-//    }
 
     public String getName() {
         return name;
@@ -56,6 +47,9 @@ public class Patient {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }
+
 
 

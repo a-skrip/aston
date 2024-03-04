@@ -25,10 +25,11 @@ public class DoctorService {
             patientDTOList.add(patientDTO);
         }
 
-
-
         return new DoctorWithPatientDTO(
-                doctorById.getName(), doctorById.getPhoneNumber(), doctorById.getSpecialization(), patientDTOList);
+                doctorById.getName(),
+                doctorById.getPhoneNumber(),
+                doctorById.getSpecialization(),
+                patientDTOList);
 
     }
 
