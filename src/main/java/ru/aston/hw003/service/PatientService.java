@@ -1,10 +1,8 @@
 package ru.aston.hw003.service;
 
-import ru.aston.hw003.dao.DoctorDAO;
+
 import ru.aston.hw003.dao.PatientDAO;
-import ru.aston.hw003.dto.DoctorDTO;
 import ru.aston.hw003.dto.PatientDTO;
-import ru.aston.hw003.entity.Doctor;
 import ru.aston.hw003.entity.Patient;
 
 public class PatientService {

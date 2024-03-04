@@ -18,6 +18,8 @@
 
         <mapping class="ru.aston.hw003.entity.Doctor"/>
         <mapping class="ru.aston.hw003.entity.Patient"/>
+        <mapping class="ru.aston.hw003.entity.CourseEntity"/>
+        <mapping class="ru.aston.hw003.entity.StudentEntity"/>
 
     </session-factory>
 </hibernate-configuration>

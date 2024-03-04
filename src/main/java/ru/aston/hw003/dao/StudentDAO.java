@@ -3,34 +3,35 @@ package ru.aston.hw003.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import ru.aston.hw003.entity.Patient;
+import ru.aston.hw003.entity.StudentEntity;
 import ru.aston.hw003.utils.HibernateUtil;
 
-
-public class PatientDAO {
+public class StudentDAO {
 
     private static final SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
-    public Patient getPatientById(long id) {
+    public StudentEntity getStudentByID(long id) {
+        try (Session session = sessionFactory.getCurrentSession()) {
+
+            Transaction transaction = session.beginTransaction();
+            StudentEntity student = session.get(StudentEntity.class, id);
+            transaction.commit();
+
+            return student;
+        }
+
+    }
+
+    public void addStudent(StudentEntity student) {
 
         try (Session session = sessionFactory.getCurrentSession()) {
 
             Transaction transaction = session.beginTransaction();
-            Patient patient = session.get(Patient.class, id);
+            session.save(student);
             transaction.commit();
 
-
-            return patient;
         }
     }
 
-    public void addPatient(Patient patient) {
 
-        try (Session session = sessionFactory.getCurrentSession()) {
-            session.beginTransaction();
-            session.save(patient);
-            session.getTransaction().commit();
-            session.close();
-        }
-    }
 }

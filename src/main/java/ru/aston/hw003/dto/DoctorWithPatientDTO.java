@@ -2,7 +2,7 @@ package ru.aston.hw003.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import ru.aston.hw003.entity.Patient;
+
 
 import java.util.List;
 
