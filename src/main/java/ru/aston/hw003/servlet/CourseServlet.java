@@ -17,7 +17,7 @@ public class CourseServlet extends HttpServlet {
     CourseService courseService = new CourseService();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         String id = request.getParameter("id");
         CourseWithStudentDTO courseById = courseService.getCourseById(Long.parseLong(id));
@@ -32,12 +32,20 @@ public class CourseServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         BufferedReader reader = request.getReader();
 
         Gson json = new Gson();
         CourseEntity course = json.fromJson(reader, CourseEntity.class);
         courseService.addCourse(course);
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        String id = request.getParameter("id");
+        courseService.deleteCourse(Long.parseLong(id));
+
     }
 }

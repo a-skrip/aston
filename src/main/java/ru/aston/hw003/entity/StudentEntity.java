@@ -20,10 +20,16 @@ public class StudentEntity extends BaseEntity{
             name = "student_course",
             joinColumns = { @JoinColumn(name = "student_id") },
             inverseJoinColumns = { @JoinColumn(name = "course_id") })
+
+//    @ManyToMany(mappedBy = "studentList", fetch = FetchType.EAGER)
+
     private List<CourseEntity> courseList;
 
+
+
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     long id;
 
     @Column

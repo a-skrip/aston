@@ -24,7 +24,7 @@ public class CourseDAO {
 
     public void addCourse(CourseEntity course) {
 
-        try (Session session = sessionFactory.getCurrentSession()){
+        try (Session session = sessionFactory.getCurrentSession()) {
 
             Transaction transaction = session.beginTransaction();
             session.save(course);
@@ -33,5 +33,14 @@ public class CourseDAO {
         }
     }
 
+    public void deleteCourse(long id) {
+        try (Session session = sessionFactory.getCurrentSession()) {
 
+            Transaction transaction = session.beginTransaction();
+            CourseEntity course = session.get(CourseEntity.class, id);
+            session.delete(course);
+            transaction.commit();
+
+        }
+    }
 }

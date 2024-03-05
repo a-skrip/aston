@@ -27,7 +27,7 @@ public class CourseService {
         }
 
 
-        return new CourseWithStudentDTO(courseDTO,studentDTO);
+        return new CourseWithStudentDTO(courseDTO, studentDTO);
     }
 
 
@@ -35,4 +35,9 @@ public class CourseService {
         courseDAO.addCourse(courseEntity);
     }
 
+    public void deleteCourse(long id) {
+        courseDAO.deleteCourse(id);
+    }
+
 }
+

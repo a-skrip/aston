@@ -16,10 +16,18 @@ import java.util.List;
 
 public class CourseEntity extends BaseEntity {
     @ManyToMany(mappedBy = "courseList", fetch = FetchType.EAGER)
+
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    @JoinTable(
+//            name = "student_course",
+//            joinColumns = { @JoinColumn(name = "course_id") },
+//            inverseJoinColumns = { @JoinColumn(name = "student_id") })
+
     private List<StudentEntity> studentList;
 
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     long id;
 
     @Column(name = "course_name")
