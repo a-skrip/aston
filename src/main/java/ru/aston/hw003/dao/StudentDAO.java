@@ -33,5 +33,16 @@ public class StudentDAO {
         }
     }
 
+    public void deleteStudent(long id) {
+
+        try (Session session = sessionFactory.getCurrentSession()) {
+
+            Transaction transaction = session.beginTransaction();
+            StudentEntity studentEntity = session.get(StudentEntity.class, id);
+            session.delete(studentEntity);
+            transaction.commit();
+
+        }
+    }
 
 }

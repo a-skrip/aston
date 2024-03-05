@@ -15,7 +15,7 @@ import java.util.List;
 
 public class StudentEntity {
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "student_course",
             joinColumns = { @JoinColumn(name = "student_id") },

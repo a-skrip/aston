@@ -32,4 +32,7 @@ public class StudentService {
     public void addStudent(StudentEntity studentEntity) {
         studentDAO.addStudent(studentEntity);
     }
+    public void deleteStudent(long id) {
+        studentDAO.deleteStudent(id);
+    }
 }

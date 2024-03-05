@@ -42,3 +42,4 @@ CREATE TABLE IF NOT EXISTS public.student_course
         FOREIGN KEY (course_id)
             REFERENCES course (id)
 );
+

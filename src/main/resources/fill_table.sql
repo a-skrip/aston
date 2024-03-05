@@ -28,8 +28,40 @@ insert into public.student (name, phone) values ('S_Sadistka', '1238855');
 
 
 insert into public.course (course_name, school) values ('JAVA', 'IT');
-insert into public.course (course_name, school) values ('EXEL', 'Microsoft');
-insert into public.course (course_name, school) values ('FOTO', 'Design');
-insert into public.course (course_name, school) values ('Office', 'Microsoft');
 insert into public.course (course_name, school) values ('C++', 'IT');
+insert into public.course (course_name, school) values ('EXEL', 'Microsoft');
+insert into public.course (course_name, school) values ('Office', 'Microsoft');
+insert into public.course (course_name, school) values ('FOTO', 'Design');
 insert into public.course (course_name, school) values ('Video', 'Design');
+
+insert into public.student_course (student_id, course_id) VALUES (1, 1);
+insert into public.student_course (student_id, course_id) VALUES (1, 2);
+insert into public.student_course (student_id, course_id) VALUES (2, 3);
+insert into public.student_course (student_id, course_id) VALUES (2, 4);
+insert into public.student_course (student_id, course_id) VALUES (3, 5);
+insert into public.student_course (student_id, course_id) VALUES (3, 6);
+
+
+
+insert into public.student_course (student_id, course_id) VALUES (2, 1);
+insert into public.student_course (student_id, course_id) VALUES (1, 2);
+insert into public.student_course (student_id, course_id) VALUES (2, 5);
+insert into public.student_course (student_id, course_id) VALUES (1, 4);
+insert into public.student_course (student_id, course_id) VALUES (3, 3);
+insert into public.student_course (student_id, course_id) VALUES (4, 6);
+insert into public.student_course (student_id, course_id) VALUES (4, 2);
+insert into public.student_course (student_id, course_id) VALUES (4, 1);
+insert into public.student_course (student_id, course_id) VALUES (5, 3);
+insert into public.student_course (student_id, course_id) VALUES (5, 1);
+insert into public.student_course (student_id, course_id) VALUES (5, 2);
+insert into public.student_course (student_id, course_id) VALUES (5, 3);
+insert into public.student_course (student_id, course_id) VALUES (5, 4);
+insert into public.student_course (student_id, course_id) VALUES (5, 5);
+insert into public.student_course (student_id, course_id) VALUES (10, 6);
+insert into public.student_course (student_id, course_id) VALUES (9, 1);
+insert into public.student_course (student_id, course_id) VALUES (8, 1);
+insert into public.student_course (student_id, course_id) VALUES (7, 1);
+insert into public.student_course (student_id, course_id) VALUES (6, 1);
+insert into public.student_course (student_id, course_id) VALUES (5, 1);
+insert into public.student_course (student_id, course_id) VALUES (4, 1);
+insert into public.student_course (student_id, course_id) VALUES (3, 1);

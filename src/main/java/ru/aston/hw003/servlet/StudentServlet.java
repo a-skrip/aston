@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import ru.aston.hw003.dto.StudentWithCourseDTO;
 import ru.aston.hw003.entity.StudentEntity;
 import ru.aston.hw003.service.StudentService;
+
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.BufferedReader;
@@ -38,6 +39,13 @@ public class StudentServlet extends HttpServlet {
         Gson gson = new Gson();
         StudentEntity studentEntity = gson.fromJson(reader, StudentEntity.class);
         studentService.addStudent(studentEntity);
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        String id = request.getParameter("id");
+        studentService.deleteStudent(Long.parseLong(id));
 
     }
 }
