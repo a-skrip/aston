@@ -13,8 +13,8 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "course", schema = "public")
-@Transactional
-public class CourseEntity {
+
+public class CourseEntity extends BaseEntity {
     @ManyToMany(mappedBy = "courseList", fetch = FetchType.EAGER)
     private List<StudentEntity> studentList;
 

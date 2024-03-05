@@ -9,7 +9,7 @@ import java.util.List;
 @Table(name = "doctor", schema = "public")
 @Data
 @NoArgsConstructor
-public class Doctor {
+public class Doctor extends BaseEntity{
 
     @OneToMany(mappedBy = "doctor", fetch = FetchType.EAGER)
     private List<Patient> patient;

@@ -13,9 +13,9 @@ import java.util.List;
 @Table(name = "student", schema = "public")
 @Entity
 
-public class StudentEntity {
+public class StudentEntity extends BaseEntity{
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "student_course",
             joinColumns = { @JoinColumn(name = "student_id") },
