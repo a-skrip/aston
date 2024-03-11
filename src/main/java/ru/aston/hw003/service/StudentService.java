@@ -8,6 +8,7 @@ import ru.aston.hw003.entity.CourseEntity;
 import ru.aston.hw003.entity.StudentEntity;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class StudentService {
 
@@ -24,7 +25,7 @@ public class StudentService {
             CourseDTO covertToDTO = new CourseDTO(elem.getCourseName(), elem.getSchool());
             courseDTOList.add(covertToDTO);
         }
-
+        Objects
         return new StudentWithCourseDTO(
                 studentDTO, courseDTOList);
     }

@@ -11,7 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "patient", schema = "public")
-public class Patient extends BaseEntity{
+public class Patient {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
@@ -22,4 +22,5 @@ public class Patient extends BaseEntity{
 
     @Column
     private String name;
+
 }
