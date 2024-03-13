@@ -16,10 +16,10 @@
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping class="ru.aston.hw003.entity.Doctor"/>
-        <mapping class="ru.aston.hw003.entity.Patient"/>
-        <mapping class="ru.aston.hw003.entity.CourseEntity"/>
-        <mapping class="ru.aston.hw003.entity.StudentEntity"/>
+        <mapping class="ru.aston.application.entity.Doctor"/>
+        <mapping class="ru.aston.application.entity.Patient"/>
+        <mapping class="ru.aston.application.entity.CourseEntity"/>
+        <mapping class="ru.aston.application.entity.StudentEntity"/>
 
     </session-factory>
 </hibernate-configuration>
